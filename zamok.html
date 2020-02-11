@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Село Кривче</title>
+	<p><img src="images/gerb.png"  height="80" width="70" align="left"> </p>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        <br>
+
+        <style>
+			body {
+    background-image: url(bg2.jpg); 
+    background-attachment: fixed;  
+      }
+			span.reference{
+				position:fixed;
+				left:10px;
+				bottom:10px;
+				font-size:12px;
+			}
+			span.reference a{
+				color:#aaa;
+				text-transform:uppercase;
+				text-decoration:none;
+				text-shadow:1px 1px 1px #000;
+				margin-right:30px;
+			}
+			span.reference a:hover{
+				color:#ddd;
+			}
+			ul.sdt_menu{
+				margin-top:60px;
+			}
+			
+			
+		</style>
+		<div class="content">
+			
+			<ul id="sdt_menu" class="sdt_menu">
+				<li>
+		<a href="index.html">
+						<img src="images/1.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Головна</span>
+							<span class="sdt_descr">Моє село</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="zamok.html">
+						<img src="images/pamytki.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Замок</span>
+							<span class="sdt_descr">КОНТСЬКИХ</span>
+						</span>
+					</a>
+					<div class="">
+							<a href=""></a>
+							<a href=""></a>
+							<a href=""></a>
+					</div>
+				</li>
+				<li>
+					<a href="cerkva.html">
+						<img src="images/cerkva2.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Церква</span>
+							<span class="sdt_descr">Вознесіння Господнього</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="peshera.html">
+						<img src="images/pecerabutt.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Кришталева</span>
+							<span class="sdt_descr">ПЕЧЕРА</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="kontakti.html">
+						<img src="images/kontakti.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Контакти</span>
+							<span class="sdt_descr">ХЗ шо тут писати</span>
+						</span>
+					</a>
+				</li>
+				
+            
+		</div>
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+				/**
+				* for each menu element, on mouseenter, 
+				* we enlarge the image, and show both sdt_active span and 
+				* sdt_wrap span. If the element has a sub menu (sdt_box),
+				* then we slide it - if the element is the last one in the menu
+				* we slide it to the left, otherwise to the right
+				*/
+                $('#sdt_menu > li').bind('mouseenter',function(){
+					var $elem = $(this);
+					$elem.find('img')
+						 .stop(true)
+						 .animate({
+							'width':'170px',
+							'height':'170px',
+							'left':'0px'
+						 },400,'easeOutBack')
+						 .andSelf()
+						 .find('.sdt_wrap')
+					     .stop(true)
+						 .animate({'top':'140px'},500,'easeOutBack')
+						 .andSelf()
+						 .find('.sdt_active')
+					     .stop(true)
+						 .animate({'height':'170px'},300,function(){
+						var $sub_menu = $elem.find('.sdt_box');
+						if($sub_menu.length){
+							var left = '170px';
+							if($elem.parent().children().length == $elem.index()+1)
+								left = '-170px';
+							$sub_menu.show().animate({'left':left},200);
+						}	
+					});
+				}).bind('mouseleave',function(){
+					var $elem = $(this);
+					var $sub_menu = $elem.find('.sdt_box');
+					if($sub_menu.length)
+						$sub_menu.hide().css('left','0px');
+					
+					$elem.find('.sdt_active')
+						 .stop(true)
+						 .animate({'height':'0px'},300)
+						 .andSelf().find('img')
+						 .stop(true)
+						 .animate({
+							'width':'0px',
+							'height':'0px',
+							'left':'85px'},400)
+						 .andSelf()
+						 .find('.sdt_wrap')
+						 .stop(true)
+						 .animate({'top':'25px'},500);
+				});
+            });
+        </script>
+</head>
+<style>
+   .shadowtext {
+    text-shadow: 1px 1px 2px black, 0 0 1em green;
+    color: white;
+    font-size: 2em; 
+   }
+  </style>
+<body>
+<center>
+		<table border="1"; width=75%; style=background-image:url(images/tablefon.jpg);>
+		</center> 
+         <tr>	
+        	<td>
+        	<center>
+        		<h1> Замок Контських</h1>
+        	<p><img src="images/zamok1.jpg"></p> </center>
+        	<p class="shadowtext">
+        		<center>
+        			<p class="shadowtext">
+        	<br><i>Координати: 48°41′58″ пн. ш. 26°06′14″ сх. д.
+
+ Можливо, найвідоміше село Борщівщини. Відоме, звичайно, не так замком, як своїми печерами. Давня назва села - Оплакане. З архітектури тут маємо:</p></i></center>
+<p class="shadowtext"><li>замок;</li>
+<li>замковий костел Непорочного Зачаття Діви Марії (фундатор Станіслав Контський, 1650), перебудований з колишньої порохової вежі твердині;</li>
+<li>муровану греко-католицьку Покровську церкву (1856);</li>
+<li>дерев'яну і дуже скромну церкву в Нижньому Кривчому. Каталог В.Слободяна чомусь помилково датує її XVII ст. Якщо ж вірити путівнику "Podole" видавництва Rewasz (автор Г.Ранковський), то храм присвяченний Вознесінню Господньому і датується 1760 роком. Перебудова мала місце в 1927 році.</li>
+<li>монумент Тарасу Шевченку.</p></li></i>
+ <center><p><img src="images/zamok5.jpg"></p>
+ 	<p class="shadowtext">
+ 	<i>
+ 		Про Кривче треба знати наступне: село, зараз єдине, поділяється на дві колись окремі частині: Кривче Нижнє (Долішнє) і Кривче Верхнє (Горішнє). За замком - в верхню частину поселення (це елементарно, мої ватсони, але раптом хтось не здогадався?). Шукати нічого не доведеться: замок знаходиться при трасі в самісенькому центрі села. 
+Оборонний замок в Кривчому було збудовано 1639 р. тодішніми власниками Контськими (Kontski) у формі прямокутника з чотирма баштами по кутах, з арсеналом та в‘їздною брамою. Не дивлячись на досконало вибране місце (замок розташовано на високому пагорбі над рікою Циганкою) фортецю неодноразово брали татари і турки. Відомо, що в липні 1648 р. козацькі війська вигнали з замку польський гарнізон.
+У 1672 р. турецький султан Магомет ІV, повертаючись з Бучачу після підписання договору з Польщею, захопив замок і перебував тут певний час зі своїм військом. 1675 року Ян ІІ Собеський наказав обложити твердиню. Під час облоги оборонні споруди зазнали значних пошкоджень. В тому ж році в зруйнованій фортеці засів польський зрадник Кричинський з загоном липків (татар). Пізніше, в 1687 р., вже татарські загони взяли в облогу поляків. Кривчанський замок був важливим стратегічним пунктом у воєнних діях Польщі проти Туреччини.
+У XVIII ст., коли життя стало спокійнішим, відпала загроза нападу татар і турків, замок відреставрували. До середини ХІХ ст. він служив за житло і був власністю Гойовських (за іншими даними Голейовських). Масової руйнації фортеця зазнала у ІІ пол. ХІХ ст., коли вона перейшла у руки Л. Зейдмана. Камінь з північної, західної, східної стін і з двох веж розібрали для будівництва винокурні і житлових будинків. У 1892 р. польський дослідник та краєзнавець Олександр Чоловський ще бачив фундаменти від розібраних стін і веж. Ця інформація дещо суперечить кадру з польського національного архіву Polona.pl. Кадр датований початком ХХ ст., а саме часом до Першої світової війни - і на ньому виразно видно і три башти (з дахами!), і реально великі фрагменти мурів, і стіни замкових споруд (вже у стані руїни). Можливо, фото було датовано помилково - і це не початок ХХ століття, а таки кінець ХІХ-го. 
+Друга спроба реставрації замку була зроблена у 1920-х рр. Подільським туристично-краєзнавчим товариством. На той час відновили одну башту, в якій обладнали кілька приміщень на зимовий і літній періоди для туристів - своєрідну турбазу.
+З фундаментів зруйнованих стін і веж місцеві жителі повибирали весь камінь на господарські потреби. Не дарма росіяни кажуть, що на халяву і оцет солодкий.
+ 	</p></i></center>
+ 	
+ 	<div style="float:left;margin:80px;border: 1px solid#000000" align="right">
+ 		<img src="images/zamok2.jpg" width="160" height="160" border="0">
+ 		
+ 	<img src="images/zamok4.jpg" width="160" height="160" border="0">
+ 	<img src="images/zamok3.jpg" width="160" height="160" border="0">
+ 	<img src="images/zamok6.jpg" width="160" height="160" border="0">
+ 	<img src="images/zamok7.jpg" width="160" height="160" border="0">
+
+ 	</div>
+ 	<p><img src="images/selo.jpg"></p>
+ </td>
+</tr>
+</table>
+<a href="#";><img src="images/verh.png"
+        	alt=""
+        	border="0" align="right" height="80" width="80"></a>
+</body>
+</html>
